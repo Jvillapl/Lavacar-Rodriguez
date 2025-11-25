@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavacar Los Rodríguez - Cuidado Experto para tu Vehículo</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Fuente (Inter) y Colores Personalizados (Inspirado en Profesionalismo y Limpieza) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --primary-color: #0d6efd; /* Azul brillante y profesional */
+            --secondary-color: #fca311; /* Naranja para destacar acciones */
+            --text-dark: #14213d;
+            --text-light: #e5e5e5;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+        }
+        .text-primary { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+        .text-secondary { color: var(--secondary-color); }
+        .bg-secondary { background-color: var(--secondary-color); }
+        .btn-primary {
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            box-shadow: 0 4px 10px rgba(13, 110, 253, 0.5);
+        }
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #e8950f;
+            box-shadow: 0 4px 10px rgba(252, 163, 17, 0.5);
+        }
+        /* Estilo para el botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366; /* Verde de WhatsApp */
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 2px 2px 3px #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Botón Flotante de WhatsApp (Funcionalidad Clave) -->
+    <a href="https://wa.me/50672201240" target="_blank" class="whatsapp-float" aria-label="Contactar a Lavacar Los Rodríguez por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7 fill-current">
+            <!-- Icono de WhatsApp de Font Awesome (Versión SVG simplificada) -->
+            <path d="M380.9 97.4C339.4 59.3 286.9 38.2 224 38.2 119.8 38.2 38.8 119.2 38.8 223.4c0 40.6 12.8 79.5 37.1 113.8l-23.8 87.2 89.8-23.7c32.5 17.6 69.8 26.8 108.3 26.8h.2c104.2 0 185.2-81.1 185.2-185.2.1-57.9-24.3-112.5-66.6-152.9zM224 430.2c-36.9 0-72.2-9.6-103.1-27.4l-7.3-4.3-75.1 19.8 20.2-73.6-4.7-7.5c-20.5-32.9-31.5-70.9-31.5-110.8 0-86 70.1-155.1 156.1-155.1 46.8 0 91.2 20.3 123.1 52.2s52.2 76.3 52.2 123.1c0 86-70.1 155.1-156.1 155.1h-.1zm102.7-111.4c-5.1-2.5-30.7-15.1-35.4-16.8-4.7-1.7-8.1-2.5-11.6 2.5-3.5 5.1-13.5 16.8-16.5 20.3-3.1 3.5-6.1 4.2-11.2 1.7-5.1-2.5-21.5-7.9-40.9-25.2-15.1-13.5-25.3-30.2-28.4-35.4-3.1-5.1-.3-7.9 2.2-10.4 2.2-2.2 4.7-5.1 7.1-7.6 2.5-2.5 3.3-4.2 4.7-7.1 1.7-3.1.8-5.8-.8-7.9-1.7-2.1-11.6-27.9-15.9-38.1-4.2-10.2-8.5-8.7-11.6-8.8-3.1-.1-6.7-.1-10.4-.1-3.7 0-9.7 1.3-14.8 6.4-5.1 5.1-19.5 19-19.5 46.2 0 27.2 20 53.6 22.8 57.3 2.9 3.7 39 59.6 94.6 83.1 41.5 17.5 74.4 23.3 84 20.4 9.6-2.9 30.7-12.5 35-24.5 4.3-12-1.7-22.8-3.5-25.7-1.7-2.9-3.7-5.1-7.1-6.9z"/>
+        </svg>
+    </a>
+
+    <!-- Encabezado y Navegación -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo y Título -->
+            <div class="flex items-center space-x-3">
+                <div class="text-xl font-bold text-primary">Lavacar Los Rodríguez</div>
+                <span class="text-xs text-gray-500 hidden sm:inline">Desde 2017</span>
+            </div>
+            <!-- Menú de Navegación -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-600 hover:text-primary transition duration-150">Inicio</a>
+                <a href="#servicios" class="text-gray-600 hover:text-primary transition duration-150">Servicios Premium</a>
+                <a href="#mecanica" class="text-gray-600 hover:text-primary transition duration-150">Mantenimiento</a>
+                <a href="#experiencia" class="text-gray-600 hover:text-primary transition duration-150">Experiencia</a>
+                <a href="#contacto" class="text-gray-600 hover:text-primary transition duration-150">Contacto</a>
+            </nav>
+            <!-- Botón de Acción visible en Desktop -->
+            <a href="#servicios" class="hidden md:inline-flex btn-primary text-white font-semibold py-2 px-4 rounded-full shadow-lg">
+                Ver Precios
+            </a>
+            <!-- Icono de Menú para Móvil (Opcional, ya que es una landing page) -->
+        </div>
+    </header>
+
+    <!-- Sección 1: Inicio (Home) -->
+    <section id="inicio" class="pt-16 pb-24 bg-gray-100/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-text-dark leading-tight mb-4">
+                <span class="text-secondary">Cuidado Experto</span> para tu Vehículo
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Dejamos tu carro impecable y te garantizamos un manejo seguro. Lavado, Pulido y Alineado de Precisión en Alajuela.
+            </p>
+            <!-- Botón de acción destacado (Objetivo de la Web) -->
+            <a href="#servicios" class="inline-flex btn-secondary text-white font-bold text-lg py-3 px-8 rounded-full shadow-xl hover:shadow-2xl uppercase tracking-wider transform hover:scale-105">
+                Ver Servicios y Precios
+            </a>
+
+            <!-- Imagen de gran impacto / Mockup del servicio -->
+            <div class="mt-12 rounded-xl shadow-2xl overflow-hidden max-w-4xl mx-auto">
+                <!-- Placeholder para la imagen de un vehículo limpio o el local -->
+                <img src="https://placehold.co/1200x500/0d6efd/ffffff?text=Tu+Vehículo+Impecable" 
+                     alt="Imagen de un vehículo perfectamente limpio en Lavacar Los Rodríguez" 
+                     class="w-full h-auto object-cover"
+                     onerror="this.onerror=null; this.src='https://placehold.co/1200x500/0d6efd/ffffff?text=Tu+Vehiculo+Impecable';">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 2: Servicios Premium y Menú de Precios Interactivo -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-text-dark">Nuestros Servicios <span class="text-primary">Premium</span></h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta 1: Lavado Premium SEDAN -->
+                <div class="p-6 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-3 text-primary">Lavado Premium SEDAN</h3>
+                    <p class="text-3xl font-extrabold text-secondary mb-4">Desde ₡10.000</p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Aspirado Profundo Interior</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Encerado de Brillo Exterior</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Limpieza de Vidrios y Rines</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Uso Exclusivo de Productos <span class="font-bold">Meguiar's</span></li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta 2: Lavado Premium SUV/4x4 -->
+                <div class="p-6 border-2 border-primary bg-primary/5 rounded-xl shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                    <h3 class="text-2xl font-semibold mb-3 text-primary">Lavado Premium SUV / 4x4</h3>
+                    <p class="text-3xl font-extrabold text-secondary mb-4">Desde ₡14.000</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Aspirado de Alta Potencia</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Protección y Encerado para Carrocería Grande</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Tratamiento Especial de Llantas y Guardabarros</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Uso Exclusivo de Productos <span class="font-bold">Meguiar's</span></li>
+                    </ul>
+                </div>
+
+                <!-- Tarjeta 3: Pulido y Detallado -->
+                <div class="p-6 border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-3 text-primary">Detallado & Pulido</h3>
+                    <p class="text-3xl font-extrabold text-secondary mb-4">¡Pida su cotización!</p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Eliminación de Rayones y Marcas</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Recuperación del Brillo Original</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Tratamiento de Faros Opacos</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Servicio de Descontaminación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Llamada a la acción debajo de los servicios -->
+            <div class="text-center mt-12">
+                <p class="text-xl text-gray-700 mb-6">¿Tiene preguntas sobre los detalles de los paquetes?</p>
+                <a href="https://wa.me/50672201240" target="_blank" class="inline-flex btn-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 fill-current" viewBox="0 0 448 512"><path d="M380.9 97.4C339.4 59.3 286.9 38.2 224 38.2 119.8 38.2 38.8 119.2 38.8 223.4c0 40.6 12.8 79.5 37.1 113.8l-23.8 87.2 89.8-23.7c32.5 17.6 69.8 26.8 108.3 26.8h.2c104.2 0 185.2-81.1 185.2-185.2.1-57.9-24.3-112.5-66.6-152.9z"/></svg>
+                    WhatsApp: 7220 1240
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección 3: Mecánica / Mantenimiento (Alineado) -->
+    <section id="mecanica" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Columna de Contenido -->
+                <div>
+                    <span class="text-sm font-semibold uppercase text-secondary">Más que un Lavacar</span>
+                    <h2 class="text-4xl font-bold mb-4 text-text-dark">Alineado para un mejor Manejo y Seguridad</h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        En Los Rodríguez, el cuidado es integral. Ofrecemos servicio de alineado de precisión con tecnología de punta para garantizar que su vehículo mantenga la estabilidad, reduzca el desgaste de llantas y optimice el consumo de combustible.
+                    </p>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><svg class="w-6 h-6 text-primary flex-shrink-0 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 005 12c0 3.076 1.49 5.865 3.824 7.632L12 22l3.176-2.368c2.334-1.767 3.824-4.556 3.824-7.632 0-3.15-.996-6.108-2.758-8.528z"></path></svg>
+                            <span class="font-semibold">Seguridad ante todo:</span> Mantiene la dirección estable a altas velocidades.
+                        </li>
+                        <li class="flex items-start"><svg class="w-6 h-6 text-primary flex-shrink-0 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 005 12c0 3.076 1.49 5.865 3.824 7.632L12 22l3.176-2.368c2.334-1.767 3.824-4.556 3.824-7.632 0-3.15-.996-6.108-2.758-8.528z"></path></svg>
+                            <span class="font-semibold">Llantas Duraderas:</span> Evita el desgaste irregular y prematuro.
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/50672201240" target="_blank" class="mt-6 inline-flex btn-secondary text-white font-semibold py-2 px-6 rounded-full shadow-lg">
+                        Consultar sobre Alineado
+                    </a>
+                </div>
+                <!-- Columna de Imagen -->
+                <div class="rounded-xl shadow-2xl overflow-hidden">
+                    <!-- Placeholder para la imagen del equipo de alineado -->
+                    <img src="https://placehold.co/600x400/14213d/ffffff?text=Alineado+de+Precisión" 
+                         alt="Imagen de equipo de alineado de precisión en Lavacar Los Rodríguez" 
+                         class="w-full h-auto object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/14213d/ffffff?text=Alineado+de+Precision';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Experiencia del Cliente (Confort) -->
+    <section id="experiencia" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center flex-row-reverse">
+                <!-- Columna de Contenido -->
+                <div class="text-center md:text-left">
+                    <span class="text-sm font-semibold uppercase text-primary">Esperar es un placer</span>
+                    <h2 class="text-4xl font-bold mb-4 text-text-dark">Esperá Cómodo con Café y WiFi</h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Sabemos que su tiempo es valioso. Por eso, hemos diseñado nuestra sala de espera para que sea un espacio de confort.
+                    </p>
+                    <ul class="space-y-4 text-gray-700 list-inside text-left inline-block md:block">
+                        <li class="flex items-center"><svg class="w-6 h-6 text-secondary flex-shrink-0 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-2.81A2 2 0 0018 13V6a2 2 0 10-4 0v7a2 2 0 00-.595 1.19l-1.405 2.81h5z"></path></svg>
+                            Café y Bebidas de cortesía.
+                        </li>
+                        <li class="flex items-center"><svg class="w-6 h-6 text-secondary flex-shrink-0 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Internet WiFi de alta velocidad.
+                        </li>
+                        <li class="flex items-center"><svg class="w-6 h-6 text-secondary flex-shrink-0 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.418 0-8 2.239-8 5v2h16v-2c0-2.761-3.582-5-8-5z"></path></svg>
+                            Trato personalizado y amable.
+                        </li>
+                    </ul>
+                </div>
+                <!-- Columna de Imagen -->
+                <div class="rounded-xl shadow-2xl overflow-hidden">
+                    <!-- Placeholder para la imagen de la sala de espera / cliente con café -->
+                    <img src="https://placehold.co/600x400/fca311/ffffff?text=Sala+de+Espera+con+Confort" 
+                         alt="Imagen de un cliente esperando con café en la sala de Lavacar Los Rodríguez" 
+                         class="w-full h-auto object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/fca311/ffffff?text=Sala+de+Espera+con+Confort';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Testimonios de Clientes (Prueba Social) -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-text-dark">Lo que dicen nuestros Clientes <span class="text-secondary">Satisfechos</span></h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-primary/50">
+                    <svg class="w-8 h-8 text-primary mb-4 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M7 17l4 4V3H7v14zm6 0l4 4V3h-4v14z"></path></svg>
+                    <p class="italic text-gray-700 mb-4">"¡El mejor lavacar de Alajuela! Dejan mi SUV como nuevo. Y el servicio de alineado es de primera. Siempre espero cómodo con mi café."</p>
+                    <p class="font-semibold text-text-dark">- María F.</p>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-primary/50">
+                    <svg class="w-8 h-8 text-primary mb-4 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M7 17l4 4V3H7v14zm6 0l4 4V3h-4v14z"></path></svg>
+                    <p class="italic text-gray-700 mb-4">"Profesionales, rápidos y usan productos de calidad (Meguiar's se nota). La atención por WhatsApp es súper ágil. ¡Recomendados 100%!"</p>
+                    <p class="font-semibold text-text-dark">- José P.</p>
+                </div>
+                <!-- Testimonio 3 -->
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-primary/50">
+                    <svg class="w-8 h-8 text-primary mb-4 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M7 17l4 4V3H7v14zm6 0l4 4V3h-4v14z"></path></svg>
+                    <p class="italic text-gray-700 mb-4">"Llevo mi carro desde 2018. La constancia en la calidad es lo que más valoro. El mejor lugar para el mantenimiento preventivo en Alajuela Centro."</p>
+                    <p class="font-semibold text-text-dark">- Roberto A.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 6: Galería de Resultados (Muestra Visual) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-text-dark">Galería de Resultados <span class="text-primary">Antes y Después</span></h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Foto 1: Lavado Exterior (Brillo) -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/600x400/14213d/ffffff?text=Pulido+Exterior" 
+                         alt="Resultado de pulido exterior" class="w-full h-auto object-cover transform hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/14213d/ffffff?text=Pulido+Exterior';">
+                </div>
+                <!-- Foto 2: Detalle Interior (Aspirado) -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/600x400/fca311/ffffff?text=Limpieza+de+Tapicería" 
+                         alt="Resultado de limpieza de tapicería" class="w-full h-auto object-cover transform hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/fca311/ffffff?text=Limpieza+de+Tapiceria';">
+                </div>
+                <!-- Foto 3: Rines y Llantas -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/600x400/0d6efd/ffffff?text=Rines+Impecables" 
+                         alt="Rines y llantas limpios" class="w-full h-auto object-cover transform hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d6efd/ffffff?text=Rines+Impecables';">
+                </div>
+                <!-- Foto 4: Motor/Detallado -->
+                <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://placehold.co/600x400/14213d/ffffff?text=Detalle+de+Motor" 
+                         alt="Detalle de limpieza de motor" class="w-full h-auto object-cover transform hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/14213d/ffffff?text=Detalle+de+Motor';">
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 mt-6">¡Vea el trabajo real en persona!</p>
+        </div>
+    </section>
+
+    <!-- Sección 7: Contacto & Ubicación -->
+    <section id="contacto" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">Visítenos en Alajuela Centro</h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Columna de Contacto -->
+                <div class="space-y-6">
+                    <!-- Ubicación -->
+                    <div class="flex items-start">
+                        <svg class="w-8 h-8 text-secondary flex-shrink-0 mt-1 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <div>
+                            <p class="text-xl font-semibold text-white">Ubicación</p>
+                            <p class="text-gray-400">Alajuela Centro, Cerca del [Punto de Referencia Local]</p>
+                        </div>
+                    </div>
+                    <!-- Teléfono/WhatsApp -->
+                    <div class="flex items-start">
+                        <svg class="w-8 h-8 text-secondary flex-shrink-0 mt-1 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.46c-1.42 0-2.82-.47-4.18-1.41-.66-.46-1.5-.6-2.22-.38-.72.22-1.3.71-1.74 1.34-1.27 1.87-3.21 2.95-5.32 2.95-2.13 0-4.14-1.09-5.39-3.03-.43-.63-1.02-1.12-1.74-1.34-.72-.22-1.56-.08-2.22.38-1.36.94-2.76 1.41-4.18 1.41-1.1 0-2 .9-2 2v.5c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2v-3c0-1.1-.9-2-2-2zM12 2a10 10 0 00-10 10c0 4.42 3.58 8 8 8 1.05 0 2.07-.21 3-.6l2.9 2.9.7-.7-2.9-2.9c.39-.93.6-1.94.6-3 0-4.42-3.58-8-8-8zm-2 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+                        <div>
+                            <p class="text-xl font-semibold text-white">Contáctenos</p>
+                            <p class="text-gray-400">Vía WhatsApp: <span class="text-secondary font-bold">7220 1240</span></p>
+                        </div>
+                    </div>
+                    <!-- Horario -->
+                    <div class="flex items-start">
+                        <svg class="w-8 h-8 text-secondary flex-shrink-0 mt-1 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 14h-1v-5l-3-3.5.7-.7 3.3 3.8V16z"/></svg>
+                        <div>
+                            <p class="text-xl font-semibold text-white">Horario de Atención</p>
+                            <p class="text-gray-400">Lunes a Sábado: 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+
+                    <!-- Botón de Acción Grande -->
+                    <a href="https://wa.me/50672201240" target="_blank" class="mt-8 block w-full text-center btn-secondary text-gray-900 font-bold text-xl py-4 px-8 rounded-lg shadow-xl uppercase tracking-wider transform hover:scale-[1.02]">
+                        ¡CONTACTENOS AHORA!
+                    </a>
+                </div>
+
+                <!-- Columna de Mapa Incrustado -->
+                <div class="rounded-xl overflow-hidden shadow-2xl h-80 md:h-full">
+                    <!-- Iframe de Google Maps Placeholder (Se usaría el iframe real) -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15717.377983584852!2d-84.22591632599797!3d10.003185348888062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa1f8101684c8a7%3A0x644265cc8f53a81a!2sAlajuela!5e0!3m2!1ses-419!2scr!4v1700685603704!5m2!1ses-419!2scr" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-gray-800 text-gray-400 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2024 Lavacar Los Rodríguez. Todos los derechos reservados.</p>
+            <p class="mt-1">
+                <a href="#inicio" class="hover:text-white mx-2">Inicio</a> | 
+                <a href="#servicios" class="hover:text-white mx-2">Servicios</a> | 
+                <a href="#contacto" class="hover:text-white mx-2">Contacto</a>
+            </p>
+            <p class="mt-2 text-xs">Desarrollo Web y SEO Local para atraer más clientes en Alajuela.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para asegurar un desplazamiento suave al hacer clic en los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
